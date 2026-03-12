@@ -82,7 +82,7 @@ def test_get_product_nonID():
 
 def test_update_stock():
     #arrange
-    add_product("C003", "MAC PC", 78.99, 20)
+    add_product("C003", "MAC PC", 13.50, 20)
     #act
     new_stock = update_stock("C003", 5)
     #assert
@@ -90,7 +90,7 @@ def test_update_stock():
 
 
 def test_update_stock_decreases():
-    add_product("C003", "MAC PC", 78.99, 25)
+    add_product("C003", "MAC PC", 13.50, 25)
     new_stock = update_stock("C003", -10)
     assert new_stock == 15
 
@@ -185,7 +185,7 @@ def test_list_products_fixturess(sample_products):
     products = list_products()
     assert len(products) == 3
 
-def test_calculate_total_fixtures(sample_products):
+def test_calculate_total_fixturess(sample_products):
     total = calculate_total("C015", 4)
     assert total == 120.00
 
