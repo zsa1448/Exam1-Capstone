@@ -64,7 +64,7 @@ def test_add_product():
 def test_get_product():
     # Arrange 
     add_product("C002", "Keyboard", 13.50, 12)
-    #assert
+    #aact
     product = get_product("C002")
     #Assert
     assert product is not None
@@ -77,6 +77,7 @@ def test_get_product():
 def test_get_product_nonID():
     #act
     product = get_product("C9999999")
+    #assert
     assert product is None
 
 
@@ -90,27 +91,39 @@ def test_update_stock():
 
 
 def test_update_stock_decreases():
+    #arrange
     add_product("C003", "MAC PC", 13.50, 25)
+    #act
     new_stock = update_stock("C003", -10)
+    #assert
     assert new_stock == 15
 
 
 def test_list_products():
+    #arrange
     add_product("C005", "cam", 19.8, 15)
     add_product("C006", "Headset", 5.99, 22)
+    #act
     products = list_products()
+    #assert
     assert len(products) == 2
 
 
 def test_calculate_total():
+    #arrange
     add_product("C007", "Monitor", 9.99, 8)
+    #act
     total = calculate_total("C007", 3)
+    #assert
     assert total==29.97
 
 
 def test_list_products_2():
+    #arrange
     add_product("C008", "Iphone 17", 92.50, 40)
+    #act
     products = list_products()
+    #assert
     assert len(products) == 1
     item = products[0]
     assert "product_id" in item
